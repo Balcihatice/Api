@@ -1,10 +1,12 @@
 package com.apitest.day05;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+
 
 public class GetRequest03 {
 
@@ -32,16 +34,26 @@ public class GetRequest03 {
         //eeger status codu assert edeceksek respons.then
         //normal assert ilede yapariz
 
+//        response.then().
+//                assertThat().
+//                statusCode(200).
+//                contentType("application/json").
+//                body("firstname", Matchers.equalTo("Mark")).
+//                body("lastname", Matchers.equalTo("Jackson")).
+//                body("totalprice", Matchers.equalTo(498)).
+//                body("depositpaid", Matchers.equalTo(false)).
+//                body("bookingdates.checkin", Matchers.equalTo("2021-06-07")).
+//                body("bookingdates.checkout", Matchers.equalTo("2021-08-25"));
+//
         response.then().
                 assertThat().
                 statusCode(200).
-                contentType("application/json").
-                body("firstname", Matchers.equalTo("Mark")).
-                body("lastname", Matchers.equalTo("Jackson")).
-                body("totalprice", Matchers.equalTo(498)).
-                body("depositpaid", Matchers.equalTo(false)).
-                body("bookingdates.checkin", Matchers.equalTo("2021-06-07")).
-                body("bookingdates.checkout", Matchers.equalTo("2021-08-25"));
+                contentType(ContentType.JSON).
+                body("firstname", equalTo("Mark"),
+                        "lastname", equalTo("Wilson"),
+                        "totalprice", equalTo(371),
+                        "bookingdates.checkin", equals("2020-01-02"),
+                        "bookingdates.checkin", equals("2021-02-10"));
 
     }
 }
