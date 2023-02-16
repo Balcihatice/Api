@@ -1,5 +1,6 @@
 package com.apitest.day04;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -21,12 +22,38 @@ public class GetRequest01 {
         //2-beklenen sonuc(expected result) olusturulur.bu case de benden body
         //dogrulamasi istenmedigi icin simdilik beklenen sonuc olusturmuyoruz.
         //3-request gonder
-        Response responce = given().accept("application/json").when().get(url);
+        Response responce = given().
+                accept(ContentType.JSON).//accept("application/json") kullanilabilir.
+                when().
+                get(url);
 
-        //4-Actual result olustur
+        //responce.prettyPrint(); -->> yazdirma islemini responce ile yapariz
+
+        //4-Actual result olustur(bunu java objesi gibi olustururuz)
         // respons body aslinda actual resuldir, Bunu bi yerde saklamaliyiz
+        //simdilik respons body kullanmayacagimiz icin olusturmayacagiz
+
         //5-Dogrulama yap(assertion)
-        responce.prettyPrint();
+        System.out.println("Status Code : " + responce.getStatusCode());//responsdan gelen status codu aldik
+        System.out.println("Content Type : " + responce.getContentType());//responsdan gelen content type aldik
+        System.out.println("status Line : " + responce.getStatusLine());//responsdan gelen status line aldik
+        // Istersek Header in tamamini yazdirabiliriz
+        System.out.println(responce.getHeaders());
+
+ /*
+        Assert.assertEquals(200, responce.getStatusCode());
+        //expected kismi bize task olarak verilen degerdir.Actual ksimi ise
+        //responcee dan donen degerdir.
+        Assert.assertEquals("application/json; charset=utf-8", responce.getContentType());
+        Assert.assertEquals("HTTP/1.1 200 OK", responce.getStatusLine());
+
+*/
+        //api deki assert etme yondemlerinden bir tanesini gorelim
+        responce.then().
+                assertThat().
+                statusCode(200).
+                contentType(ContentType.JSON).
+                statusLine("HTTP/1.1 200 OK");
 
     }
 }
