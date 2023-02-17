@@ -7,9 +7,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
 
-public class GetRequest07 extends HerokuAppTestBase {
+public class GetRequest07_jsonPath extends HerokuAppTestBase {
     //https://restful-booker.herokuapp.com/booking/5 adresine bir request gonderildiginde
     //accept type`i "application/json" olan GET reueat yolladigimda gelen response`un
     //asagidaki gibi oldugunu test edin
