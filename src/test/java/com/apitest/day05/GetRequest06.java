@@ -12,7 +12,7 @@ public class GetRequest06 extends JsonPlaceHolderTestBase {
     //accept type`i "application/json" olan GET reueat yolladigimda gelen response`un
     //status codeun 200
     //content-type "application/json" oldugunu test edin
-    //geaders daki "Server" in "cloudflare
+    //headers daki "Server" in "cloudflare"
     // ve title"in "esse et quis iste est earum aut impedit"
     // ve "completed" bolumunun false oldugunu test edin
 
