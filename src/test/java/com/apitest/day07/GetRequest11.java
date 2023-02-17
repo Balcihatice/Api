@@ -9,7 +9,7 @@ import org.junit.Test;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+
 
 public class GetRequest11 extends JsonPlaceHolderTestBase {
 
@@ -53,15 +53,15 @@ public class GetRequest11 extends JsonPlaceHolderTestBase {
 
 
         //1.Yontem Matchers class ile assertion yaptik
-  //    response.then().
-  //            assertThat().
-  //            statusCode((Integer) expectedData.get("statusCode")).
-  //            headers("Via", equalTo(expectedData.get("Via")),
-  //                    "Server", equalTo(expectedData.get("Server"))).
-  //            body("userId", equalTo(expectedData.get("userId")),
-  //                    "title", equalTo(expectedData.get("title")),
-  //                    "completed", equalTo(expectedData.get("completed")));
-  //
+        //    response.then().
+        //            assertThat().
+        //            statusCode((Integer) expectedData.get("statusCode")).
+        //            headers("Via", equalTo(expectedData.get("Via")),
+        //                    "Server", equalTo(expectedData.get("Server"))).
+        //            body("userId", equalTo(expectedData.get("userId")),
+        //                    "title", equalTo(expectedData.get("title")),
+        //                    "completed", equalTo(expectedData.get("completed")));
+        //
 
         //2.Yontem
         JsonPath jsonPath = response.jsonPath();
@@ -73,11 +73,9 @@ public class GetRequest11 extends JsonPlaceHolderTestBase {
         Assert.assertEquals(expectedData.get("completed"), jsonPath.getBoolean("completed"));
 
 
-
         //3.yontem deserialization
         // --object mapper
         // --pojo class ile birlikte map kullanacagiz
-
 
 
     }
