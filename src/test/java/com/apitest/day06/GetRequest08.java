@@ -3,6 +3,8 @@ package com.apitest.day06;
 import com.apitest.testBase.DummyTestBase;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -26,7 +28,7 @@ public class GetRequest08 extends DummyTestBase {
                 when().
                 get("/{parametre1}");
 
-        //response.prettyPrint();
+        response.prettyPrint();
 
         //data.employee_name dersek liste atmadan tum isimleri yazdirabiliriz
         //eger bir liste alacaksan getList ile alabiliriz
@@ -44,6 +46,11 @@ public class GetRequest08 extends DummyTestBase {
         //son calisanin adini
         System.out.println(jsonPath.getString("data.employee_name[-1]"));
 
+        //Assertionlarini yazalim-> 3. kisinin adini "Ashton Cox" oldugunu test edelim
+        Assert.assertEquals("Ashton Cox", jsonPath.getString("data[2].employee_name"));
+        Assert.assertEquals("Doris Wilder", jsonPath.getString("data.employee_name[-1]"));
 
+        //statuscode jsondan test edilmez. o yuzden responsdan assert ettik
+        Assert.assertEquals(200, response.statusCode());
     }
 }
