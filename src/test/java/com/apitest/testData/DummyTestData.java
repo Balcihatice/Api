@@ -45,4 +45,20 @@ public class DummyTestData {
 
         return expectedData;
     }
+
+    //getrequest14
+    //https://dummy.restapiexample.com/api/v1/employees adresine bir request gonderildiginde
+    //statusCode 200 oldugunu
+    //En yuksek maasin 725000 oldugunu
+    //En kusuk yasin 19 oldugunu
+    //Ikinci en yuksek maasin 675000 oldugunu test edin
+    public HashMap<String, Integer> setUpData02() {
+        HashMap<String, Integer> expectedData = new HashMap<String, Integer>();
+        expectedData.put("statusCode", 200);
+        expectedData.put("enYuksekMaas", 725000);
+        expectedData.put("enKucukYas", 19);
+        expectedData.put("ikinciEnYuksekMaas", 675000);
+        return expectedData;
+
+    }
 }
