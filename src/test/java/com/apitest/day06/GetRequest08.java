@@ -41,7 +41,7 @@ public class GetRequest08 extends DummyTestBase {
         //System.out.println(jsonPath.getString("data.employee_name[2]"));sekliylede calisir
 
         //ilk 5 isim
-        System.out.println(jsonPath.getString("data.employee_name[10,1,2,3,4]"));
+        System.out.println(jsonPath.getString("data.employee_name[0,1,2,3,4]"));
 
         //son calisanin adini
         System.out.println(jsonPath.getString("data.employee_name[-1]"));

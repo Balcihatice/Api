@@ -15,7 +15,8 @@ public class GetRequest13 extends DummyTestBase {
 
 /*
 https://dummy.restapiexample.com/api/v1/employees adresine bir request gonderildiginde
-5. calisanin isminin "Airi satou oldugunu, calisan sayisinin 24 oldugunu,
+5. calisanin isminin "Airi satou oldugunu,
+calisan sayisinin 24 oldugunu,
 Sondan 2. calisanin maasinin 106450 oldugunu
 40,21 ve 19 yaslarinda calisanlar olup olmadigini(yas diye bir liste atabiliriz)
 11.calisan bilgilerinin

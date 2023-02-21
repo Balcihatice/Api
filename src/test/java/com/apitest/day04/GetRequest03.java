@@ -23,7 +23,7 @@ public class GetRequest03 {
                 get(url);
 
         response.prettyPrint();
-    //response.assString()->>response`u stringe cevirir.(contains ile kullanmak istersek)
+    //response.asString()->>response`u stringe cevirir.(contains ile kullanmak istersek)
         response.then().
                 assertThat().
                 statusCode(404);
