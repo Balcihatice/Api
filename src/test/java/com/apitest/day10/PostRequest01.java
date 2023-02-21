@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 
-public class PostRequest extends DummyTestBase {
+public class PostRequest01 extends DummyTestBase {
  /* https://dummy.restapiexample.com/api/v1/create urlsine  Request  body olarak
  {
         "name":"Ahmet Aksoy",
