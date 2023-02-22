@@ -44,7 +44,7 @@ public class JsonPlaceHolderTestData {
         return expectedRequest;
 
     }
-/*
+/*Put Request
     {
         "userId": 21,
             "title": "Wash the dishes",
@@ -58,5 +58,32 @@ public class JsonPlaceHolderTestData {
         expectedRequest.put("title", "Wash the dishes");
         expectedRequest.put("completed", false);
         return expectedRequest;
+    }
+
+
+    /*Patch Request
+    {
+        "title": "API calismaliyim",
+    }
+*/
+    public  JSONObject setUpPatcRequestData() {
+        JSONObject expectedRequest = new JSONObject();
+        expectedRequest.put("title", "API calismaliyim");
+        return expectedRequest;
+    }
+
+ /*   {
+        "userId": 10;
+        "title": "API calismaliyim",
+            "completed": true,
+            "id": 198
+    }*/
+    public JSONObject setUpPatchExpectedData(){
+        JSONObject expectedData = new JSONObject();
+        expectedData.put("userId", 10);
+        expectedData.put("title", "API calismaliyim");
+        expectedData.put("copmleted", true);
+        expectedData.put("id", 198);
+        return expectedData;
     }
 }

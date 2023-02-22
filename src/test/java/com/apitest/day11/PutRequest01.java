@@ -54,14 +54,5 @@ public class PutRequest01 extends JsonPlaceHolderTestBase {
         Assert.assertEquals(expectedRequest.getBoolean("completed"),json.getBoolean("completed"));
 
 
-
-
-
-
-
-
-
-        //
     }
-
 }
