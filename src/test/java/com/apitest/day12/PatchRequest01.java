@@ -15,11 +15,9 @@ import static io.restassured.RestAssured.given;
 
 public class PatchRequest01 extends JsonPlaceHolderTestBase {
     /*Patch request
-    https://jsonplaceholder.typicode.com/todos198 urlsine asagidaki body gonderildiginde
+    https://jsonplaceholder.typicode.com/todos/198 urlsine asagidaki body gonderildiginde
     {
-
     "title": "API calismaliyim",
-
     }
     Donen responsun statuscodeun 200 ve response nin sagidaki gibi oldugunu test edin
      {
@@ -51,14 +49,11 @@ public class PatchRequest01 extends JsonPlaceHolderTestBase {
                 patch("/{parametre1}/{parametre2}");
         response.prettyPrint();
 
-        //json
-        JsonPath json = response.jsonPath();
-        Assert.assertEquals(expectedData.getString("title"), json.getString("title"));
 
         //de serialization
         HashMap<String, Object> actualData = response.as(HashMap.class);
         Assert.assertEquals(200, response.getStatusCode());
-        Assert.assertEquals(expectedData.getInt("userId"),actualData.get("usreId"));
+        Assert.assertEquals(expectedData.getInt("userId"),actualData.get("userId"));
         Assert.assertEquals(expectedData.getInt("id"),actualData.get("id"));
         Assert.assertEquals(expectedData.getString("title"),actualData.get("title"));
         Assert.assertEquals(expectedData.getBoolean("completed"),actualData.get("completed"));
