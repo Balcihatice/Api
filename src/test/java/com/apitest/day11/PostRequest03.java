@@ -17,14 +17,10 @@ public class PostRequest03 extends JsonPlaceHolderTestBase {
 
     /*
     https://jsonplaceholder.typicode.com/todos urlsine asagidaki body gonderildiginde
-    {
-    "userId": 55;
-    "title": "Tidy your room",
-    "completed": false
-    }
+   https://jsonplaceholder.typicode.com/todos
     Donen responsun statuscodeun 201 ve response nin sagidaki gibi oldugunu test edin
      {
-    "userId": 55;
+    "userId": 55,
     "title": "Tidy your room",
     "completed": false
     }
@@ -41,7 +37,7 @@ public class PostRequest03 extends JsonPlaceHolderTestBase {
         Response response = given().
                 accept("application/json").
                 spec(spec01).
-                //body(expectedRequest.toString()).
+                body(expectedRequest.toString()).
                 when().
                 post("/{parametre1}");
         response.prettyPrint();
