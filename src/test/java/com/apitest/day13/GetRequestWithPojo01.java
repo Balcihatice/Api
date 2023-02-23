@@ -69,7 +69,7 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
 
 //----------------------------------------------------
         //Serializaztion java yapısında olan dataları json formatına dönüştürme işlemidir.
-        //Gson sınıfından bir obje üretilir
+        //Gson sınıfından bir obje üretilir (.as in geldigi kutuphane bu kutuphanedir)
 
         Gson gson=new Gson();
         String jsonFromJava=gson.toJson(actualData);
