@@ -32,7 +32,7 @@ public class GetReguest05 {
                 contentType(ContentType.JSON).
                 body("data.id", hasSize(24),
                         "data.employee_name", hasItem("Tiger Nixon"),//boyle bir iteme degere sahip mi?
-                        "data.employee_age", hasItems(21,61,23));
+                        "data.employee_age", hasItems(21,61,23));  //hasItem bir tane deger ariyorsak kullaniliriz
 
     }
 }

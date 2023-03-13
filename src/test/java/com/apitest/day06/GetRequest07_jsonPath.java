@@ -37,18 +37,25 @@ public class GetRequest07_jsonPath extends HerokuAppTestBase {
 
         response.prettyPrint();
 
+        response.then().
+                assertThat().
+                statusCode(200).
+                contentType("application/json");
+
         // Assert.assertEquals(200,response.getStatusCode());
 
-        //jsonPath den bir obje tanimlamaliyiz
+        //jsonPath den bir obje tanimlamaliyiz//bodynin icine girip dolasabilmek icin json pathe ihtiyacimiz var.
         JsonPath jsonPath = response.jsonPath();//response dan geleni al jsonpathe aktar
+
+        //************** ONEMLI *****************
         //jsonpath bize sadece body dondurur,statuscode ve header alamayiz
+
         Assert.assertEquals("Eric", jsonPath.getString("firstname"));
         Assert.assertEquals("Jackson", jsonPath.getString("lastname"));
         Assert.assertEquals(418, jsonPath.getInt("totalprice"));
         Assert.assertEquals(false, jsonPath.getBoolean("depositpaid"));
         Assert.assertEquals("2021-06-23", jsonPath.getString("bookingdates.checkin"));
         Assert.assertEquals("2021-06-30", jsonPath.getString("bookingdates.checkout"));
-
 
     }
 }

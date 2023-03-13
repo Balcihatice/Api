@@ -31,7 +31,7 @@ public class GetRequest03 {
 
 
         response.prettyPrint();
-        //eeger status codu assert edeceksek respons.then
+        //eger status codu assert edeceksek respons.then
         //normal assert ilede yapariz
 
 //        response.then().
