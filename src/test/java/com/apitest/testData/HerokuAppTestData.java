@@ -3,8 +3,8 @@ package com.apitest.testData;
 import org.json.JSONObject;
 import java.util.HashMap;
 
-public class HerokuAppTestData {
-    /*
+public class   HerokuAppTestData {
+    /*{
       "firstname" "Sally"
               "lastname":"Smith"
               "totalprice":667
@@ -13,7 +13,7 @@ public class HerokuAppTestData {
          "checkin":"2018-07-27"
          "checkout":"2019-10-20"
        }
- 
+ }
      */
     //sadece test datalarini olusturuyoryuz.
     public HashMap<String, Object> setUpTestData() {
