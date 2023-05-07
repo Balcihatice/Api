@@ -41,7 +41,7 @@ public class PostRequest01 extends DummyTestBase {
         HashMap<String, String> requestBodyMap = obje.setUpRequestBody();//request gonderecegimiz
         HashMap<String, Object> expectedDataMap = obje.setUpExpectedData();//rsponse dan donen
         Response response = given().
-                accept("aapplication/json").
+                accept("application/json").
                 spec(spec03).auth().basic("admin", "password123").
                 when().post("/{parametre1}");
         response.prettyPrint();
